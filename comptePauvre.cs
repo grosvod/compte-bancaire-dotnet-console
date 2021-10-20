@@ -4,7 +4,13 @@ public class ComptePauvre : Compte, Don
 {
 
 
-	public const double tauxAgios = 0.2;
+	public ComptePauvre()
+	{
+		TauxAgios = 0.1;
+	}
+
+
+
 
 
 
@@ -22,11 +28,13 @@ public class ComptePauvre : Compte, Don
 
 		}
 
-
 	}
 
-    public void Don()
-    {
-        throw new NotImplementedException();
-    }
+
+	public void Don()
+	{
+		throw new NotImplementedException();
+	}
+
+
 }

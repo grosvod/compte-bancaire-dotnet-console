@@ -4,7 +4,12 @@ public class CompteVip : Compte, Don
 {
 
 
-	public const double tauxAgios = 0.1;
+	public CompteVip() {
+		TauxAgios = 0.2;
+	}
+	
+		
+
 
 
 	public override int Agios(int soldeActuelle)
@@ -21,6 +26,7 @@ public class CompteVip : Compte, Don
 
 		}
 
+	
 
 	}
 
