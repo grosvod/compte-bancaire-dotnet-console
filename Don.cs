@@ -2,6 +2,6 @@
 
 public interface Don
 {
-	public void Don()
+	public void Don();
 
 }

@@ -10,7 +10,7 @@ namespace tests_app
 
 
             
-            string reponseIdentifiant = "";
+            ConsoleKeyInfo reponseIdentifiant;
             string firstName = "";
             string name = "";
             int? solde = null;
@@ -21,8 +21,10 @@ namespace tests_app
             Console.WriteLine("Bienvenue dans notre banque, nous allons avoir besoin d'infos.");
 
             //recuperation du nom
-            while (reponseIdentifiant != "y" || reponseIdentifiant != "yes")
+
+            do
             {
+
                 Console.WriteLine("rentrez votre nom");
                 name = Console.ReadLine();
 
@@ -30,27 +32,32 @@ namespace tests_app
                 firstName = Console.ReadLine();
 
                 Console.WriteLine("Votre prénom et nom est " + firstName + " " + name + " est ce exact (y/n)?");
-                reponseIdentifiant = Console.ReadLine();
-            }
+                reponseIdentifiant = Console.ReadKey();
 
 
+            } while (reponseIdentifiant.Key != ConsoleKey.Y);
 
-            while (solde.HasValue)
+            Console.WriteLine("\n" + "ok, votre nom est rentré");
+            Console.ReadKey();
+
+
+            do
             {
-            Console.WriteLine("rentrez votre solde en €");
-            string soldeProvisoire = Console.ReadLine();
-                
-            if (int.TryParse(soldeProvisoire, out int val) == false)
+                Console.WriteLine("rentrez votre solde en €");
+                string soldeProvisoire = Console.ReadLine();
+
+                if (int.TryParse(soldeProvisoire, out int val) == false)
                 {
                     Console.WriteLine("Erreur, veuillez rentrer un chiffre entier.");
 
-                }else
+                }
+                else
                 {
                     solde = int.Parse(soldeProvisoire);
                 }
 
 
-            }
+            } while (solde == null);
 
 
             //entrée des infos dans le compte
@@ -69,8 +76,12 @@ namespace tests_app
             compte.prenom = firstName;
             compte.nom = firstName;
             compte.solde = (int)solde;
+            Console.WriteLine("Votre prénom et nom est " + compte.prenom + " " + compte.nom + ", et vous disposer de " + compte.solde + "sur votre compte");
 
-            //boucle de 
+
+            //boucle de jeu de gestion
+
+
 
 
 
